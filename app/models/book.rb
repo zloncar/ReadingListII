@@ -1,6 +1,7 @@
 class Book < ActiveRecord::Base
 
   validates :title, presence: true
+  validates :author, presence: true
   validates :genres, presence: true
 
   has_many :book_genres

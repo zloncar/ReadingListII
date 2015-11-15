@@ -1,9 +1,13 @@
 require 'test_helper'
 
 class BookTest < ActiveSupport::TestCase
+
+  def setup
+    @book = Book.new
+  end
+
   test 'invalid without a title' do
-    b = Book.new
-    assert !b.valid?, 'Title is not being validated'
+    assert !@book.valid?, 'Title is not being validated'
   end
 
   test 'check author' do
@@ -22,11 +26,16 @@ class BookTest < ActiveSupport::TestCase
   test 'valid with all attributes' do
     book = Book.new(title: 'Kad srce radi bi-bim-ba-bam')
     book.genres << Genre.new
+    book.author = 'Magnus & Bunker'
     assert book.valid?
   end
 
   test 'find finished books' do
     books = [ books(:one), books(:two) ]
     assert books.find_all { |b| b.finished? }.size == 1
+  end
+
+  test 'invalid without an author' do
+    assert_attribute_is_validated(@book, :author)
   end
 end

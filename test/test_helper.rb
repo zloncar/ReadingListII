@@ -6,5 +6,8 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  def assert_attribute_is_validated(model, attribute)
+    model.assign_attributes(attribute => nil)
+    assert !model.valid?, "#{attribute.to_s} is not being validated"
+  end
 end
