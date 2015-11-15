@@ -2,6 +2,9 @@ require 'test_helper'
 
 class BookTest < ActiveSupport::TestCase
 
+  should validate_numericality_of(:id)
+  should validate_presence_of(:title)
+
   def setup
     @book = Book.new
   end
@@ -24,7 +27,7 @@ class BookTest < ActiveSupport::TestCase
   end
 
   test 'valid with all attributes' do
-    book = Book.new(title: 'Kad srce radi bi-bim-ba-bam')
+    book = Book.new(id: 1, title: 'Kad srce radi bi-bim-ba-bam')
     book.genres << Genre.new
     book.author = 'Magnus & Bunker'
     assert book.valid?

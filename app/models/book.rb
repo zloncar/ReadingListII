@@ -3,6 +3,8 @@ class Book < ActiveRecord::Base
   validates :title, presence: true
   validates :author, presence: true
   validates :genres, presence: true
+  validates :id, presence: true,
+    numericality: { only_integer: true }
 
   has_many :book_genres
   has_many :genres, through: :book_genres

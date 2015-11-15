@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   title: Umro je bogati ujak
   author: Magnus and Bunker
   description: One of Alan Ford classics
@@ -8,6 +9,7 @@ one:
   finished_on: 2010-02-11 11:02:57
 
 two:
+  id: 2
   title: Grupa TNT
   author: Magnus and Bunker
   description: First episode in the Alan Ford opus
