@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  author: MyString
-  description: MyText
-  amazon_id: MyString
+  title: Umro je bogati ujak
+  author: Magnus and Bunker
+  description: One of Alan Ford classics
+  amazon_id: 012345
+  finished_on: 2010-02-11 11:02:57
 
 two:
-  title: MyString
-  author: MyString
-  description: MyText
-  amazon_id: MyString
+  title: Grupa TNT
+  author: Magnus and Bunker
+  description: First episode in the Alan Ford opus
+  amazon_id: 001234
+  finished_on: nil
